@@ -1,0 +1,22 @@
+pipeline:
+  pipeline_type: displace
+visualization:
+  visualize_layer: 0
+  visualize_s: 1
+  visualize_select: 0
+  visualize_move: 0
+data:
+  filename: ../examples/fcc/edge_dislocation/NiCoCr.data
+  format: lammps-data
+  atom_style: atomic
+  lattice: 3.556
+layerization:
+  layer_direction_vector: [1, 0, 0]
+s_plane:
+  s_center_point: [10, -110, 0]
+  s_type: rectangle
+  s_length: 190
+  s_width: 600
+moving:
+  move_direction_vector: [0, 1, 0]
+  move_step: 0.707

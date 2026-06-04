@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["magic_dislocation"]
+
+[project]
+name = "magic_dislocation"
+version = "0.1.0"
+description = "magic_dislocation: A Flexible Dislocaton Constructor"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml==6.0.3",
+    "pypubsub==4.0.3",
+    "scipy==1.15.3",
+    "wxpython==4.2.4",
+    "six==1.17.0",
+    "numpy==2.2.6",
+    "matplotlib==3.10.7",
+    "pillow==12.0.0"
+]

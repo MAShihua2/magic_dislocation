@@ -1,0 +1,22 @@
+pipeline:
+  pipeline_type: displace
+visualization:
+  visualize_layer: 0
+  visualize_s: 0
+  visualize_select: 0
+  visualize_move: 0
+data:
+  filename: ../examples/fcc/partial_dislocation_loop/Ni.data
+  format: lammps-data
+  atom_style: atomic
+  lattice: 3.556
+layerization:
+  layer_direction_vector: [0, 0, 1]
+s_plane:
+  s_center_point: [0.6, 1, 0.36]
+  s_type: rectangle
+  s_length: 40
+  s_width: 40
+moving:
+  move_direction_vector: [0, 1, 0]
+  move_step: 0.408

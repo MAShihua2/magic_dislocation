@@ -1,0 +1,32 @@
+pipeline:
+  pipeline_type: move
+visualization:
+  visualize_layer: 0
+  visualize_s: 1
+  visualize_select: 0
+  visualize_move: 0
+data:
+  filename: ../examples/fcc/rotation_loop/Ave_field.data
+  format: lammps-data
+  atom_style: atomic
+  lattice: 3.556
+layerization:
+  layer_direction_vector: [0, 0, 1]
+s_plane:
+  s_center_point: [0.62809, 1.025665, 0.3626265]
+  s_type: loop
+  s_num_points: 48
+  s_radius: 10
+  s_init_vertical_axis: 2
+  s_init_direction_vector: [0, 0, 1]
+  s_direction_vector: [0, -1, -2.82862]
+add:
+  layers_range_for_adding: [20, 21]
+delete:
+  burgers_vector_fraction: 1
+  burgers_vector_direction: [1, 1, 0]
+selection:
+  layer_range: [10, 150]
+moving:
+  move_direction_vector: [0, 1, 0]
+  move_step: 0.408

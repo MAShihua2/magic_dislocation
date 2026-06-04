@@ -1,0 +1,27 @@
+pipeline:
+  pipeline_type: displace
+visualization:
+  visualize_layer: 0
+  visualize_s: 0
+  visualize_select: 0
+  visualize_move: 0
+data:
+  filename: ../examples/fcc/shape_sin_line/NiCoCr.data
+  format: lammps-data
+  atom_style: atomic
+  lattice: 3.556
+layerization:
+  layer_direction_vector: [0, 1, 0]
+s_plane:
+  s_center_point: [-71.2, 25, 0]
+  s_type: sin
+  s_length: 140.54
+  s_width: 200
+  s_A: 10
+  s_omega: 8
+  s_start: 1
+  s_end: 2
+  s_num_points: 48
+moving:
+  move_direction_vector: [0, 0, 1]
+  move_step: 0.707

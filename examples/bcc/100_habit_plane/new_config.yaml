@@ -1,0 +1,25 @@
+pipeline:
+  pipeline_type: add_displace
+visualization:
+  visualize_layer: 0
+  visualize_s: 0
+  visualize_select: 0
+  visualize_add: 0
+  visualize_move: 0
+data:
+  filename: ../examples/bcc/100_habit_plane/TaNbMoW.data
+  format: lammps-data
+  atom_style: atomic
+  lattice: 3.195
+layerization:
+  layer_direction_vector: [-0.9223,   1.3043, 0]
+s_plane:
+  s_center_point: [35.51, 30.00, 25.98]
+  s_type: loop
+  s_num_points: 48
+  s_radius: 7.07
+  s_init_vertical_axis: 0
+add:
+  layers_range_for_adding: [20, 21]
+moving:
+  burgers_vector: [-0.866, 0, 0]

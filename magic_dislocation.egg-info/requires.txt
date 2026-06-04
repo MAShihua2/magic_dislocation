@@ -1,0 +1,8 @@
+pyyaml==6.0.3
+pypubsub==4.0.3
+scipy==1.15.3
+wxpython==4.2.4
+six==1.17.0
+numpy==2.2.6
+matplotlib==3.10.7
+pillow==12.0.0
