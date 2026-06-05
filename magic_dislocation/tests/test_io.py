@@ -68,7 +68,7 @@ class AseIOTester(BaseIOTester):
         self.test_write()
 
 config = {}
-file_name = r'/Users/shaowei/Desktop/Codes4Shihuama/MagicDislocation_v1/examples/fcc/s350_16_112/model.data'
+file_name = r'../examples/fcc/rotation_loop/Ni.data'
 config = {"filename": file_name,
           "format": "lammps-data",
           "atom_style": "atomic",

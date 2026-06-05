@@ -13,7 +13,19 @@ import numpy as np
 # sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 from magic_dislocation.pipeline.displace_pipeline import DisplacePipeline
 from magic_dislocation.io.ase_io import ase_read, ase_write
+
+import logging
+# setting logger 
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
     
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+continue_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+console_handler.setFormatter(continue_formatter)
+    
+logger.addHandler(console_handler)    
 
 class BasePipelineTester:
     def __init__(self):
@@ -36,7 +48,7 @@ class DisplacePipelineTester(BasePipelineTester):
         pipeline.run()
 
 config = {}
-file_name = r'/Users/shaowei/Desktop/Codes4Shihuama/MagicDislocation_v1/examples/fcc/s350_16_112/model.data'
+file_name = r'../examples/fcc/partial_dislocation_loop/Ni.data'
 config = {"filename": file_name,
           "format": "lammps-data",
           "atom_style": "atomic",
@@ -53,9 +65,9 @@ print(cells.complete())
 
 # exit()
 config["positions"] = atoms.get_positions()
-
+config["logger"] = logger
 # parameters for define_s
-config["s_center_point"] = np.array([0.62809, 0.36, 1.02566])
+config["s_center_point"] = np.array([0.6, 1, 0.36])
 config["s_type"] = "rectangle"
 config["s_length"] = 40
 config["s_width"] = 40
@@ -66,15 +78,14 @@ config["visualize_layer"] = False
 config["visualize_select"] = False
 config["visualize_move"] = False
 config["layer_direction_vector"] = [0, 0, 1]
-config["move_direction_vector"] = [1, 0, 0]
-config["layer_range"] = [50, 90]
+config["move_direction_vector"] = [0, 1, 0]
 config["lattice"] = 3.556
 config["move_step"] = 0.408
 
 tester = DisplacePipelineTester(config)
 tester.test_run()
 
-output_file = r'/Users/shaowei/Desktop/Codes4Shihuama/MagicDislocation_v1/examples/fcc/s350_16_112/model_move.data'
+output_file = r'../examples/fcc/partial_dislocation_loop/Ni.data.moved'
 write_config = {}
 write_config["format"] = "lammps-data"
 write_config["atom_style"] = "atomic"
